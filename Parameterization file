@@ -1,0 +1,42 @@
+Zeerodha
+package parameterization;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+public class Test4 {
+	public static void main(String[] args) throws EncryptedDocumentException, IOException {
+		
+		FileInputStream open=new FileInputStream("C:\\Users\\HP\\Downloads\\Automation Files.xlsx");
+ Sheet readData = WorkbookFactory.create(open).getSheet("Sheet2");
+		//System.out.println(readData);
+        String name = readData.getRow(1).getCell(0).getStringCellValue();
+        System.out.print("  "+name);
+		
+		String std = readData.getRow(1).getCell(1).getStringCellValue();
+		System.out.print("  "+std);
+		
+		String num = readData.getRow(1).getCell(2).getStringCellValue();
+		System.out.print("  "+num);
+		
+		String city = readData.getRow(1).getCell(3).getStringCellValue();
+		System.out.print("  "+city);
+		
+		String aim = readData.getRow(1).getCell(4).getStringCellValue();
+		System.out.print("  "+aim);
+		
+		String day = readData.getRow(1).getCell(5).getStringCellValue();
+		System.out.print("  "+day);
+		
+		String month = readData.getRow(1).getCell(6).getStringCellValue();
+		System.out.print("  "+month);
+		
+		String yr = readData.getRow(1).getCell(7).getStringCellValue();
+		System.out.print("  "+yr);
+		}
+	}
